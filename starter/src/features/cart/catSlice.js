@@ -10,8 +10,16 @@ const initialState = {
 const catSlice = createSlice({
   name: "cat",
   initialState,
+  reducers: {
+    clearCat: (state) => {
+      state.legs = "white";
+      state.loading = !state.loading;
+      console.log(state);
+    },
+  },
 });
 
-console.log(catSlice);
+// console.log(catSlice);
+export const { clearCat } = catSlice.actions;
 
 export default catSlice.reducer;
